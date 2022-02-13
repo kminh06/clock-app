@@ -13,7 +13,7 @@ export default function Header() {
 
   return (
     <div id="header">
-      <div id="time" class="nav-items">{time}</div>
+      <div id="time" className="nav-items">{time}</div>
     </div>
   )
 }

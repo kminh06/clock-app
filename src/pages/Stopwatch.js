@@ -1,5 +1,5 @@
 import React from 'react';
-import StopwatchDisplay from './components/StopwatchDisplay';
+import StopwatchDisplay from './components/StopwatchDisplay'
 
 class Stopwatch extends React.Component {
   constructor(props) {
@@ -10,6 +10,7 @@ class Stopwatch extends React.Component {
       currentTimeMs: 0,
       currentTimeSec: 0,
       currentTimeMin: 0,
+      currentTimeHour: 0,
     };
   }
 
