@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react'
 
 export default function Timer() {
-  const defaultHr = 0;
-  const defaultMin = 3;
-  const defaultSec = 0;
-
   const [running, setRunning] = useState(false);
-  let [hour, setHour] = useState(defaultHr);
-  let [min, setMin] = useState(defaultMin);
-  let [sec, setSec] = useState(defaultSec);
+  let [min, setMin] = useState(3);
+  let [sec, setSec] = useState(0);
+
+  const [initMin, setInitMin] = useState();
+  const [initSec, setInitSec] = useState();
 
   function formatTime(val) {
     let value = val.toString();
@@ -20,6 +18,8 @@ export default function Timer() {
 
   function start() {
     setRunning(true);
+    setInitMin(min);
+    setInitSec(sec);
   };
 
   function stop() {
@@ -28,9 +28,8 @@ export default function Timer() {
 
   function reset() {
     setRunning(false);
-    setHour(defaultHr);
-    setMin(defaultMin);
-    setSec(defaultSec);
+    setMin(initMin);
+    setSec(initSec);
   }
 
   function add(unit) {
