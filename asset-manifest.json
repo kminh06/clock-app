@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/clock-app/static/css/main.e7401941.css",
-    "main.js": "/clock-app/static/js/main.d587dc70.js",
+    "main.js": "/clock-app/static/js/main.6c52217e.js",
     "static/media/stopwatch.png": "/clock-app/static/media/stopwatch.f26e7e0557d54c19ae9b.png",
     "static/media/timer.png": "/clock-app/static/media/timer.c0bcb085499653bc502d.png",
     "index.html": "/clock-app/index.html",
     "main.e7401941.css.map": "/clock-app/static/css/main.e7401941.css.map",
-    "main.d587dc70.js.map": "/clock-app/static/js/main.d587dc70.js.map"
+    "main.6c52217e.js.map": "/clock-app/static/js/main.6c52217e.js.map"
   },
   "entrypoints": [
     "static/css/main.e7401941.css",
-    "static/js/main.d587dc70.js"
+    "static/js/main.6c52217e.js"
   ]
 }
