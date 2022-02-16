@@ -18,7 +18,6 @@ function Home() {
           <h1>timer</h1>
         </div></Link>
       </div>
-      <div id="filler"></div>
       <Footer />
     </div>
   )
