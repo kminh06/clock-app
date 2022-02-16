@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react'
 
 export default function Timer() {
   const [running, setRunning] = useState(false);
-  let [min, setMin] = useState(3);
-  let [sec, setSec] = useState(0);
-
+  const [min, setMin] = useState(3);
+  const [sec, setSec] = useState(0);
   const [initMin, setInitMin] = useState();
   const [initSec, setInitSec] = useState();
   const [hidden, setHidden] = useState("");
+  const [action, setActionState] = useState(false);
+  const [startBtn, setStartBtn] = useState("START");
+  const [startBtnColor, setStartBtnColor] = useState("btn-primary");
 
   function formatTime(val) {
     let value = val.toString();
@@ -19,22 +21,29 @@ export default function Timer() {
 
   function start() {
     setRunning(true);
-    setInitMin(min);
-    setInitSec(sec);
+    if (startBtn == "START") {
+      setInitMin(min);
+      setInitSec(sec);
+    }
     setHidden("hidden");
+    setActionState(true);
   };
 
   function stop() {
     setRunning(false);
     setHidden();
+    setStartBtn("RESUME");
+    setStartBtnColor("btn-success");
   }
 
   function reset() {
-    if (running == true) {
+    if (action == true) {
       setRunning(false);
+      setHidden();
       setMin(initMin);
       setSec(initSec);
-      setHidden();
+      setStartBtn("START");
+      setStartBtnColor("btn-primary");
     }
   }
 
@@ -42,7 +51,7 @@ export default function Timer() {
     if (unit === "sec" && sec < 55) {
       setSec(sec + 5);
     } else if (unit === "min" && min < 59) { 
-      setMin(min + 1)
+      setMin(min + 1);
     }
   }
 
@@ -50,7 +59,7 @@ export default function Timer() {
     if (unit === "sec" && sec > 0) {
       setSec(sec - 5);
     } else if (unit === "min" && min > 0) { 
-      setMin(min - 1)
+      setMin(min - 1);
     }
   }
   
@@ -87,11 +96,12 @@ export default function Timer() {
       </div>
       <div id='button-container'>
         {running === false && (
-          <button className='btn btn-primary' onClick={start}>START</button>
+          <button className={'btn ' + startBtnColor} onClick={start}>{startBtn}</button>
         )}
         {running === true && (
           <button className='btn btn-danger' onClick={stop}>STOP</button>
         )}
+        
         <button className='btn btn-light' onClick={reset}>RESET</button>
       </div>
     </div>
