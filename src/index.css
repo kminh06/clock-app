@@ -40,12 +40,6 @@ body {
   overflow-x: hidden;
 }
 
-#site-container {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-}
-
 #header {
   border-bottom: 3px solid var(--bs-gray-dark);
   height: 35px;
@@ -56,24 +50,49 @@ body {
   z-index: 10;
 }
 
-#time {
-  text-align: center;
+#footer {
+  border-top: 3px solid var(--bs-gray-dark);
+  height: 75px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  position: absolute;
+  bottom: 0;
   font-family: 'Roboto Mono';
 }
 
-.nav-items {
+#copyright {
+  font-size: 1.5rem;
+}
+
+#time {
+  text-align: center;
+  font-family: 'Roboto Mono';
+  letter-spacing: 2px;
   font-size: 20px;
   user-select: none;
   vertical-align: center;
-  letter-spacing: 3px;
 }
 
 #main {
-  height: fit-content;
+  height: 100vh;
   padding: 0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+@media screen and (max-height: 800px) {
+  #main {
+    height: fit-content;
+  }
+  #footer {
+    position: relative;
+    margin-top: 75px;
+  }
 }
 
 #welcome-message {
@@ -162,6 +181,11 @@ a:link, a:hover, a:visited, a:active {
     height: fit-content;
   }
 
+  #footer {
+    position: relative;
+    margin-top: 75px;
+  }
+
   #link-container {
     flex-direction: column;
   }
@@ -244,10 +268,42 @@ a:link, a:hover, a:visited, a:active {
   gap: 25px;
 }
 
-#back {
-  position: absolute !important;
-  top: 55px !important;
-  left: 15px !important;
+.change-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#min {
+  grid-column: 1/2;
+  justify-self: end;
+  position: relative;
+  right: 80px;
+}
+
+#sec {
+  grid-column: 2/3;
+  justify-self: start;
+  position: relative;
+  left: 20px;
+}
+
+.change-button {
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 25px;
+  color: rgba(255, 255, 255, .65);
+  user-select: none;
+  transition: ease 0.4s;
+}
+
+.change-button:hover {
+  color: white;
+  cursor: pointer;
+  transition: ease 0.4s;
+}
+
+.hidden {
+  display: none;
+  transition: ease 0.4s;
 }
 
 .btn {

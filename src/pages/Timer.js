@@ -7,6 +7,7 @@ export default function Timer() {
 
   const [initMin, setInitMin] = useState();
   const [initSec, setInitSec] = useState();
+  const [hidden, setHidden] = useState("");
 
   function formatTime(val) {
     let value = val.toString();
@@ -20,30 +21,33 @@ export default function Timer() {
     setRunning(true);
     setInitMin(min);
     setInitSec(sec);
+    setHidden("hidden");
   };
 
   function stop() {
     setRunning(false);
+    setHidden();
   }
 
   function reset() {
     setRunning(false);
     setMin(initMin);
     setSec(initSec);
+    setHidden();
   }
 
   function add(unit) {
-    if (unit === sec && sec < 55) {
+    if (unit === "sec" && sec < 55) {
       setSec(sec + 5);
-    } else if (unit === min && min < 59) { 
+    } else if (unit === "min" && min < 59) { 
       setMin(min + 1)
     }
   }
 
   function subtract(unit) {
-    if (unit === sec && sec > 0) {
+    if (unit === "sec" && sec > 0) {
       setSec(sec - 5);
-    } else if (unit === min && min > 0) { 
+    } else if (unit === "min" && min > 0) { 
       setMin(min - 1)
     }
   }
@@ -70,11 +74,15 @@ export default function Timer() {
   return (
     <div id='timer'>
       <p className="app-title">Timer</p>
-      <div id='timer-display'>{min}<span className='time-unit'>m </span>{formatTime(sec)}<span className='time-unit'>s </span></div>
-      <button onClick={() => add(min)}>Add Min</button>
-      <button onClick={() => add(sec)}>Add Sec</button>
-      <button onClick={() => subtract(min)}>Sub Min</button>
-      <button onClick={() => subtract(sec)}>Sub Sec</button>
+      <div className='change-row'>
+        <span id='min' className={'change-button ' + hidden} onClick={() => add("min")}>+ 1</span>
+        <span id='sec' className={'change-button ' + hidden} onClick={() => add("sec")}>+ 5</span>
+      </div>
+      <div id='timer-display'>{min}<span className='time-unit'>m </span>{formatTime(sec)}<span className='time-unit'>s</span></div>
+      <div className='change-row'>
+        <span id='min' className={'change-button ' + hidden} onClick={() => subtract("min")}>- 1</span>
+        <span id='sec' className={'change-button ' + hidden} onClick={() => subtract("sec")}>- 5</span>
+      </div>
       <div id='button-container'>
         {running === false && (
           <button className='btn btn-primary' onClick={start}>START</button>

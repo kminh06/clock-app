@@ -1,6 +1,7 @@
 import StopwatchImg from './media/stopwatch.png'
 import TimerImg from './media/timer.png'
 import { Link } from 'react-router-dom'
+import Footer from './components/Footer'
 
 function Home() {
   return (
@@ -18,6 +19,7 @@ function Home() {
         </div></Link>
       </div>
       <div id="filler"></div>
+      <Footer />
     </div>
   )
 }
