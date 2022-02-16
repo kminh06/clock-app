@@ -5,4 +5,4 @@ This project is built using React. The goal of this project is to deliver a func
 By building this project, I've:
 - Learned the foundation of React (JSX, hooks, components, ...)
 - Extended my skills in programming web applications
-- Worked on bug-fixing skills
+- Worked on bug-fixing and tackling complex problems
