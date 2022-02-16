@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Home from './Home'
+import Home from './pages/Home'
 import Stopwatch from './pages/Stopwatch'
 import Timer from './pages/Timer'
 
