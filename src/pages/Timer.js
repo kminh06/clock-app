@@ -30,10 +30,12 @@ export default function Timer() {
   }
 
   function reset() {
-    setRunning(false);
-    setMin(initMin);
-    setSec(initSec);
-    setHidden();
+    if (running == true) {
+      setRunning(false);
+      setMin(initMin);
+      setSec(initSec);
+      setHidden();
+    }
   }
 
   function add(unit) {
