@@ -8,8 +8,8 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route path='/clock-app/' component={Home} exact />
-        <Route path='/clock-app/stopwatch' component={Stopwatch} />
-        <Route path='/clock-app/timer' component={Timer} />
+        <Route path='/clock-app/stopwatch/' component={Stopwatch} />
+        <Route path='/clock-app/timer/' component={Timer} />
       </Switch>
     </BrowserRouter>
   );
