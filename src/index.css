@@ -69,23 +69,13 @@ body {
   position: relative;
 }
 
-@media screen and (max-height: 800px) {
-  #main {
-    height: fit-content;
-  }
-  #footer {
-    position: relative;
-    margin-top: 75px;
-  }
-}
-
 #welcome-message {
-  height: 200px;
+  height: 150px;
   font-size: 50px;
   text-align: center;
   vertical-align: middle;
   position: relative;
-  line-height: 200px;
+  line-height: 150px;
 }
 
 #link-container {
@@ -109,6 +99,21 @@ body {
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
   user-select: none;
+}
+@media screen and (max-height: 800px) {
+  #main {
+    height: fit-content;
+  }
+  #footer {
+    position: relative;
+    margin-top: 75px;
+  }
+}
+
+@media screen and (min-height: 801px) {
+  #welcome-message {
+    line-height: 150px;
+  }
 }
 
 .app-link:hover {
