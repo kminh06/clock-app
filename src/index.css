@@ -100,7 +100,7 @@ body {
   grid-template-rows: repeat(12, 1fr);
   user-select: none;
 }
-@media screen and (max-height: 800px) {
+@media screen and (max-height: 750px) {
   #main {
     height: fit-content;
   }
@@ -110,9 +110,9 @@ body {
   }
 }
 
-@media screen and (min-height: 801px) {
+@media screen and (min-height: 800px) {
   #welcome-message {
-    line-height: 200px;
+    line-height: 175px;
   }
 }
 
