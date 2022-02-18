@@ -113,6 +113,7 @@ body {
 @media screen and (min-height: 800px) {
   #welcome-message {
     line-height: 175px;
+    height: 175px;
   }
 }
 
