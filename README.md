@@ -7,4 +7,4 @@ By building this project, I've:
 - Extended my skills in programming web applications
 - Worked on bug-fixing and tackling complex problems
 
-At the end of the project, I've passed Web 1.0 Programming (static content). Web 2.0 is next ...
+At the end of the project, I've gained significant knowledge and experience in Frontend Development.
