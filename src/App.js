@@ -5,13 +5,11 @@ import Timer from './pages/Timer'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route path='/clock-app/' component={Home} exact />
-        <Route path='/clock-app/stopwatch/' component={Stopwatch} exact />
-        <Route path='/clock-app/timer/' component={Timer} exact />
-      </Switch>
-    </BrowserRouter>
+    <Switch>
+      <Route path='/' component={Home} exact />
+      <Route path='/stopwatch/' component={Stopwatch} />
+      <Route path='/timer/' component={Timer} />
+    </Switch>
   );
 }
 export default App;

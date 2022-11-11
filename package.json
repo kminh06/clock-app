@@ -1,6 +1,5 @@
 {
-  "homepage": "https://kminh06.github.io/clock-app/",
-  "name": "official-clock-app",
+  "name": "clock-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
